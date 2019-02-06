@@ -34,3 +34,8 @@ script:
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+  
+  
+  SonarScanner.MSBuild.exe begin /k:"andypere_devops-today" /d:sonar.organization="andypere-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="975881140b95941878b25726a3d0996ed3aacf84"
+  MsBuild.exe /t:Rebuild
+  SonarScanner.MSBuild.exe end /d:sonar.login="975881140b95941878b25726a3d0996ed3aacf84"
